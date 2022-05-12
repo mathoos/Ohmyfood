@@ -1,0 +1,12 @@
+.btn{
+    background: $colour-linear;
+    border-radius: 50px;
+    padding: 20px;
+    box-shadow: 3px 3px 10px rgb(158, 158, 158);
+    
+    span{
+        color: $colour-white;           
+        font-weight: 600;                     
+        font-size: 18px;
+    }
+}
