@@ -10,35 +10,14 @@
     overflow: hidden;
     z-index: 2;
     cursor: pointer;
-  
 
-    &::before{
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: $colour-tertiary;
-        z-index: -1;
-        opacity: 0;
-        transition: .3s ease;
-        border: 3px solid transparent;
+    &:hover{
+        background: $linear-lighten;
     }
 
-    
     span{
         color: $blanc;           
         font-weight: 600;                     
         font-size: 18px;
-    }
-
-    &:hover{
-       
-
-        &::before{
-            opacity: 1;
-            border: 3px solid $colour-primary;
-        }
     }
 }

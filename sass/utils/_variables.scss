@@ -13,6 +13,11 @@ $font-size-i : 30px;
 
 $colour-linear: linear-gradient(to top, $colour-primary, $colour-secondary);
 
+$lighten-color-primary: lighten($colour-primary, 5%);
+$lighten-color-secondary: lighten($colour-secondary, 5%);
+
+$linear-lighten: linear-gradient(to top, $lighten-color-primary, $lighten-color-secondary);
+
 $police-primary: 'Roboto', sans-serif;
 $police-secondary: 'Shrikhand', cursive;
 

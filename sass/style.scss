@@ -58,6 +58,10 @@
     width: 100%;
     background-color: $colour-menu;
     padding: 80px 30px;
+    
+    a{
+        color: $colour-dark;
+    }
 
     h2{
         font-size: 26px;
