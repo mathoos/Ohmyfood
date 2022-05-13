@@ -1,5 +1,4 @@
 .header {
-    background: $colour-invalid;
     width: 100%;   
 
     &__logo {
@@ -8,7 +7,7 @@
         align-items: center;       
         height: 10vh;
         width: 100%;
-        background-color: $colour-white;
+        background-color: $blanc;
     }
 
     &__localisation{

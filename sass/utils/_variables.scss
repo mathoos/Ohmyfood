@@ -3,11 +3,13 @@ $colour-secondary: #FF79DA ;
 $colour-tertiary: #99E2D0;
 
 $colour-dark: rgb(24, 24, 24);
-$colour-accent: #D6FFF5;
-$colour-white: #fff;
-$colour-invalid: #DB464B;
+$colour-menu: rgb(238, 238, 238);
+$blanc: #fff;
+
+
+$box-shadow : 3px 3px 10px rgb(193, 193, 193);
 
 $colour-linear: linear-gradient(to top, $colour-primary, $colour-secondary);
 
-$roboto: 'Roboto', sans-serif;
-$shrikhand: 'Shrikhand', cursive;
+$police-primary: 'Roboto', sans-serif;
+$police-secondary: 'Shrikhand', cursive;

@@ -1,0 +1,33 @@
+header{
+    width: 100%;
+    height: 60vh;
+
+    .nav{
+        position: relative;
+
+        &__logo{
+            @extend .header__logo;
+
+        }
+        &__prev{
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+
+            i{
+                font-size: 2rem;  
+                color: $colour-dark;             
+            }
+        }
+    }
+
+    .main{
+        width: 100%;
+        height: calc(100% - 10vh);
+
+        &__image{
+            @include img;
+        }
+    }
+}

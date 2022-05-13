@@ -53,23 +53,46 @@ hr {
   margin: 0;
 }
 
-.btn {
+.btn, .menu__btn {
+  position: relative;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   border-radius: 50px;
   padding: 20px;
-  box-shadow: 3px 3px 10px rgb(158, 158, 158);
+  box-shadow: 3px 3px 10px rgb(193, 193, 193);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transition: 0.3s ease;
+  overflow: hidden;
+  z-index: 2;
+  cursor: pointer;
 }
-.btn span {
+.btn::before, .menu__btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #99E2D0;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s ease;
+  border: 3px solid transparent;
+}
+.btn span, .menu__btn span {
   color: #fff;
   font-weight: 600;
   font-size: 18px;
 }
+.btn:hover::before, .menu__btn:hover::before {
+  opacity: 1;
+  border: 3px solid #9356DC;
+}
 
 .header {
-  background: #DB464B;
   width: 100%;
 }
-.header__logo {
+.header__logo, header .nav__logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +144,7 @@ footer {
   gap: 10px;
   padding: 30px;
   background-color: rgb(53, 53, 53);
-  color: white;
+  color: #fff;
 }
 footer svg {
   width: 30%;
@@ -143,6 +166,116 @@ footer .info-footer i {
   height: 20px;
 }
 
+header {
+  width: 100%;
+  height: 60vh;
+}
+header .nav {
+  position: relative;
+}
+header .nav__prev {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+header .nav__prev i {
+  font-size: 2rem;
+  color: rgb(24, 24, 24);
+}
+header .main {
+  width: 100%;
+  height: calc(100% - 10vh);
+}
+header .main__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-radius: 50px 50px 0 0;
+  padding: 30px 30px 50px 30px;
+  background-color: rgb(238, 238, 238);
+}
+.menu__titre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.menu__titre h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 2rem;
+}
+.menu__titre i {
+  font-size: 30px;
+}
+.menu__entree, .menu__plat, .menu__dessert {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+.menu__entree h2, .menu__plat h2, .menu__dessert h2 {
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  background: linear-gradient(to bottom, transparent 90%, #99E2D0 1%);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+.menu__entree .card, .menu__plat .card, .menu__dessert .card {
+  position: relative;
+  display: flex;
+  background-color: #99E2D0;
+  box-shadow: 3px 3px 10px rgb(193, 193, 193);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.menu__entree .card__visible, .menu__plat .card__visible, .menu__dessert .card__visible {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  padding: 1rem;
+  transition: 0.3s;
+  background-color: white;
+  z-index: 5;
+  cursor: pointer;
+}
+.menu__entree .card__visible:hover, .menu__plat .card__visible:hover, .menu__dessert .card__visible:hover {
+  width: 80%;
+}
+.menu__entree .card__visible--sous-titre, .menu__plat .card__visible--sous-titre, .menu__dessert .card__visible--sous-titre {
+  display: flex;
+  justify-content: space-between;
+}
+.menu__entree .card__invisible, .menu__plat .card__invisible, .menu__dessert .card__invisible {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+.menu__entree .card__invisible i, .menu__plat .card__invisible i, .menu__dessert .card__invisible i {
+  font-size: 2rem;
+  color: white;
+}
+.menu__btn {
+  width: 50%;
+}
+
 .fonctionnement {
   display: flex;
   flex-direction: column;
@@ -153,9 +286,9 @@ footer .info-footer i {
   position: relative;
   display: flex;
   gap: 30px;
-  background-color: rgb(238, 238, 238);
   border-radius: 20px;
   padding: 30px 0 30px 45px;
+  background-color: rgb(238, 238, 238);
   box-shadow: 3px 3px 10px rgb(193, 193, 193);
 }
 .fonctionnement__box--numero {
@@ -187,7 +320,7 @@ footer .info-footer i {
   flex-direction: column;
   gap: 25px;
   width: 100%;
-  background-color: rgb(225, 225, 225);
+  background-color: rgb(238, 238, 238);
   padding: 80px 30px;
 }
 .restaurants h2 {
@@ -217,10 +350,8 @@ footer .info-footer i {
   background-color: #99E2D0;
   border-radius: 3px;
   padding: 7px 14px;
-}
-.restaurants .card-restaurant .image-restaurant .etiquette p {
-  color: #34977e;
   font-weight: bolder;
+  color: #1b6150;
 }
 .restaurants .card-restaurant .infos-restaurant {
   display: flex;
@@ -229,7 +360,7 @@ footer .info-footer i {
   width: 100%;
   height: 30%;
   padding: 0 30px;
-  background-color: white;
+  background-color: #fff;
 }
 .restaurants .card-restaurant .infos-restaurant .nom-restaurant {
   position: relative;
@@ -246,17 +377,18 @@ footer .info-footer i {
   transition: 0.3s ease-in;
 }
 .restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart i:nth-child(1) {
-  color: transparent;
+  opacity: 0;
+  color: #9356DC;
 }
 .restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart i:nth-child(2) {
   position: absolute;
   right: 0;
 }
 .restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart:hover i:nth-child(1) {
-  color: #9356DC;
+  opacity: 1;
 }
 .restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart:hover i:nth-child(2) {
-  color: transparent;
+  opacity: 0;
 }
 .restaurants .card-restaurant .infos-restaurant .lieu-restaurant p {
   font-size: 20px;

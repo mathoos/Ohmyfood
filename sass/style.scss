@@ -9,12 +9,11 @@
     &__box{
         position: relative;
         display: flex;
-        gap: 30px;
-        background-color: rgb(238, 238, 238);
+        gap: 30px;      
         border-radius: 20px;
         padding: 30px 0 30px 45px;
-        box-shadow: 3px 3px 10px rgb(193, 193, 193);
- 
+        background-color: $colour-menu;
+        box-shadow: $box-shadow;
 
         &--numero{
             position: absolute;
@@ -28,9 +27,8 @@
             border-radius: 50%;
 
             p{
-                color: $colour-white;
-            }
-           
+                color: $blanc;
+            }         
         }
 
         &--icone{
@@ -38,8 +36,7 @@
             i{
                 color: grey;
                 font-size: 20px;
-            }
-            
+            }          
         }
 
         &--titre{
@@ -59,7 +56,7 @@
     flex-direction: column;
     gap: 25px;
     width: 100%;
-    background-color: rgb(225, 225, 225);
+    background-color: $colour-menu;
     padding: 80px 30px;
 
     h2{
@@ -75,10 +72,7 @@
             width: 100%;
             height: 70%;
             img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
+                @include img;
             }
             .etiquette{
                 position: absolute;
@@ -87,21 +81,20 @@
                 background-color: $colour-tertiary;
                 border-radius: 3px;
                 padding: 7px 14px;
-                p{
-                    color: #34977e;
-                    font-weight: bolder;
+                font-weight: bolder;
+                @if(background-color : $colour-tertiary){
+                    color: darken($colour-tertiary, 50%)
                 }
             }
         }
-        .infos-restaurant{
-            
+        .infos-restaurant{            
             display: flex;
             flex-direction: column;
             justify-content: center;
             width: 100%;
             height: 30%;
             padding: 0 30px;
-            background-color: white;
+            background-color: $blanc;
             .nom-restaurant{
                 position: relative;
                 display: flex;
@@ -114,11 +107,12 @@
       
                     i{
                         align-self: flex-end;
-                        font-size: 30px;                        
+                        @include font-size-i;                        
                         transition: .3s ease-in;          
 
                         &:nth-child(1){
-                            color: transparent;                         
+                            opacity: 0;      
+                            color: $colour-primary;                  
                         }                   
     
                         &:nth-child(2){
@@ -128,10 +122,10 @@
                         }  
                     }
                     &:hover i:nth-child(1){
-                        color: $colour-primary;
+                        opacity: 1;
                     }
                     &:hover i:nth-child(2){
-                        color: transparent;
+                        opacity: 0;
                     }
                 }
                 
