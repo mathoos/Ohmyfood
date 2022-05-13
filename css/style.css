@@ -63,6 +63,11 @@ hr {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(24, 24, 24);
+}
+
 .btn, .menu__btn {
   position: relative;
   background: linear-gradient(to top, #9356DC, #FF79DA);
