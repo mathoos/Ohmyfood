@@ -65,11 +65,13 @@
                 z-index: 5;
                 cursor: pointer;
                
-                &:hover {
+                &:hover{
                     width: 80%;
                 }
-
-                &--titre{
+                &:hover + .card__invisible{
+                    i{
+                        transform: translateX(0) rotate(0);
+                    }                   
                 }
 
                 &--sous-titre{
@@ -79,7 +81,7 @@
         
             }
             &__invisible{
-                position: absolute;
+                position: absolute;            
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -89,8 +91,10 @@
                 top: 0;
 
                 i{
+                    transform: translateX(150%) rotate(360deg);
                     font-size: 2rem;
                     color: white;
+                    transition: .5s ease;
                 }
             }
         }

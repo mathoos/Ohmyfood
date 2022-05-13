@@ -292,6 +292,9 @@ header .main__image {
 .menu__container .card__visible:hover {
   width: 80%;
 }
+.menu__container .card__visible:hover + .card__invisible i {
+  transform: translateX(0) rotate(0);
+}
 .menu__container .card__visible--sous-titre {
   display: flex;
   justify-content: space-between;
@@ -307,8 +310,10 @@ header .main__image {
   top: 0;
 }
 .menu__container .card__invisible i {
+  transform: translateX(150%) rotate(360deg);
   font-size: 2rem;
   color: white;
+  transition: 0.5s ease;
 }
 .menu__btn {
   width: 50%;
