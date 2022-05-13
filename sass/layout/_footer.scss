@@ -5,13 +5,11 @@ footer{
     padding: 30px;
     background-color: rgb(53, 53, 53);
     color: $blanc;
-    svg{
-        width: 30%;
-        margin-bottom: 10px;
-        path{
-            fill: white;
-        }
-        
+
+    h1{
+        font-family: $police-secondary;
+        font-size: 1.5rem;
+        font-weight: lighter;
     }
     .info-footer{
         display: flex;
