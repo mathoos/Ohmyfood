@@ -107,7 +107,7 @@
       
                     i{
                         align-self: flex-end;
-                        @include font-size-i;                        
+                        font-size: $font-size-i;                        
                         transition: .3s ease-in;          
 
                         &:nth-child(1){

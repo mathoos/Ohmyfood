@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @font-face {
   font-family: "Shrikhand";
   font-style: normal;
@@ -216,13 +226,23 @@ header .main__image {
 .menu__titre i {
   font-size: 30px;
 }
-.menu__entree, .menu__plat, .menu__dessert {
+.menu__container {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 20px;
+  animation: apparition 3s ease both;
 }
-.menu__entree h2, .menu__plat h2, .menu__dessert h2 {
+.menu__container--1 {
+  animation-delay: 1s;
+}
+.menu__container--2 {
+  animation-delay: 2s;
+}
+.menu__container--3 {
+  animation-delay: 3s;
+}
+.menu__container h2 {
   width: fit-content;
   text-transform: uppercase;
   font-weight: lighter;
@@ -232,7 +252,7 @@ header .main__image {
   background-size: 50% 100%;
   background-repeat: no-repeat;
 }
-.menu__entree .card, .menu__plat .card, .menu__dessert .card {
+.menu__container .card {
   position: relative;
   display: flex;
   background-color: #99E2D0;
@@ -240,7 +260,7 @@ header .main__image {
   border-radius: 15px;
   overflow: hidden;
 }
-.menu__entree .card__visible, .menu__plat .card__visible, .menu__dessert .card__visible {
+.menu__container .card__visible {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -251,14 +271,14 @@ header .main__image {
   z-index: 5;
   cursor: pointer;
 }
-.menu__entree .card__visible:hover, .menu__plat .card__visible:hover, .menu__dessert .card__visible:hover {
+.menu__container .card__visible:hover {
   width: 80%;
 }
-.menu__entree .card__visible--sous-titre, .menu__plat .card__visible--sous-titre, .menu__dessert .card__visible--sous-titre {
+.menu__container .card__visible--sous-titre {
   display: flex;
   justify-content: space-between;
 }
-.menu__entree .card__invisible, .menu__plat .card__invisible, .menu__dessert .card__invisible {
+.menu__container .card__invisible {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -268,7 +288,7 @@ header .main__image {
   right: 0;
   top: 0;
 }
-.menu__entree .card__invisible i, .menu__plat .card__invisible i, .menu__dessert .card__invisible i {
+.menu__container .card__invisible i {
   font-size: 2rem;
   color: white;
 }

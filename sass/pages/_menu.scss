@@ -15,18 +15,27 @@
 
         h1{
             font-family: $police-secondary;
-            font-size: 2rem;
-            
+            font-size: 2rem;           
         }
+
         i{
-            @include font-size-i;
+            font-size: $font-size-i;
         }
     }
-    &__entree, &__plat, &__dessert{
+    &__container{
         display: flex;
         flex-direction: column;
         width: 100%;
         gap: 20px;
+        animation: apparition $anim-dur ease both;
+
+        @for $i from 1 through $num-container {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+            }
+        }
+
+        
 
         h2{
             width: fit-content;
@@ -45,6 +54,7 @@
             box-shadow: $box-shadow;           
             border-radius: 15px;
             overflow: hidden;
+            
 
             &__visible{
                 display: flex;
