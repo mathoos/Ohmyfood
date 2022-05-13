@@ -231,16 +231,6 @@ header .main__image {
   flex-direction: column;
   width: 100%;
   gap: 20px;
-  animation: apparition 3s ease both;
-}
-.menu__container--1 {
-  animation-delay: 1s;
-}
-.menu__container--2 {
-  animation-delay: 2s;
-}
-.menu__container--3 {
-  animation-delay: 3s;
 }
 .menu__container h2 {
   width: fit-content;
@@ -259,6 +249,34 @@ header .main__image {
   box-shadow: 3px 3px 10px rgb(193, 193, 193);
   border-radius: 15px;
   overflow: hidden;
+  animation: apparition 1.5s ease both;
+}
+.menu__container .card--1 {
+  animation-delay: 0.1666666667s;
+}
+.menu__container .card--2 {
+  animation-delay: 0.3333333333s;
+}
+.menu__container .card--3 {
+  animation-delay: 0.5s;
+}
+.menu__container .card--4 {
+  animation-delay: 0.6666666667s;
+}
+.menu__container .card--5 {
+  animation-delay: 0.8333333333s;
+}
+.menu__container .card--6 {
+  animation-delay: 1s;
+}
+.menu__container .card--7 {
+  animation-delay: 1.1666666667s;
+}
+.menu__container .card--8 {
+  animation-delay: 1.3333333333s;
+}
+.menu__container .card--9 {
+  animation-delay: 1.5s;
 }
 .menu__container .card__visible {
   display: flex;

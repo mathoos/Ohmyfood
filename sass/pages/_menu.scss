@@ -27,14 +27,6 @@
         flex-direction: column;
         width: 100%;
         gap: 20px;
-        animation: apparition $anim-dur ease both;
-
-        @for $i from 1 through $num-container {
-            &--#{$i} {
-                animation-delay: $anim-delay * $i;
-            }
-        }
-
         
 
         h2{
@@ -54,7 +46,13 @@
             box-shadow: $box-shadow;           
             border-radius: 15px;
             overflow: hidden;
-            
+            animation: apparition $anim-dur ease both;
+
+            @for $i from 1 through $num-card {
+                &--#{$i} {
+                    animation-delay: $anim-delay * $i;
+                }
+            }           
 
             &__visible{
                 display: flex;

@@ -16,6 +16,6 @@ $colour-linear: linear-gradient(to top, $colour-primary, $colour-secondary);
 $police-primary: 'Roboto', sans-serif;
 $police-secondary: 'Shrikhand', cursive;
 
-$anim-dur: 3s;
-$num-container : 3;
-$anim-delay : $anim-dur / $num-container;
+$anim-dur: 1.5s;
+$num-card : 9;
+$anim-delay : $anim-dur / $num-card;
