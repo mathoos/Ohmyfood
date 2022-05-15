@@ -6,8 +6,14 @@ $colour-dark: rgb(24, 24, 24);
 $colour-menu: rgb(238, 238, 238);
 $blanc: #fff;
 
+$anim-dur: 1.5s;
+$num-card : 9;
+$anim-delay : calc($anim-dur / $num-card);
 
-$box-shadow : 3px 3px 10px rgb(193, 193, 193);
+$colour-shadow: rgb(193, 193, 193);
+
+$box-shadow : 3px 3px 10px $colour-shadow;
+$darken-shadow : 3px 3px 10px darken($colour-shadow, 50%);
 
 $font-size-i : 30px;
 
@@ -21,6 +27,8 @@ $linear-lighten: linear-gradient(to top, $lighten-color-primary, $lighten-color-
 $police-primary: 'Roboto', sans-serif;
 $police-secondary: 'Shrikhand', cursive;
 
-$anim-dur: 1.5s;
-$num-card : 9;
-$anim-delay : $anim-dur / $num-card;
+/* Load spinner */
+
+$color:      #ffffff;
+$size:       30px;
+$speed:      0.75s;
