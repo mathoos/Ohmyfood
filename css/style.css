@@ -1,4 +1,11 @@
-/* Load spinner */
+@charset "UTF-8";
+/* Colors */
+/* animation card */
+/* box shadow */
+/* Taille des icônes */
+/* linear-gradient button */
+/* fonts*/
+/* Animation cards */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @keyframes apparition {
   from {
@@ -11,12 +18,12 @@
   }
 }
 /* load spinner */
-@keyframes rotate-forever {
+@keyframes spinner {
   0% {
     transform: rotate(0);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
 @font-face {
@@ -78,21 +85,30 @@ a {
 }
 
 .btn, .menu__btn {
+  position: relative;
   border-radius: 50px;
   padding: 20px;
   box-shadow: 3px 3px 10px rgb(193, 193, 193);
-  background-color: #9356DC;
-  background-image: linear-gradient(#FF79DA, rgba(255, 255, 255, 0));
-  /*background-image: $colour-linear;*/
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   cursor: pointer;
   transition: 0.3s ease;
+  z-index: 1;
 }
-.btn:hover, .menu__btn:hover {
-  background-color: #a16be0;
-  /*background-image: $linear-lighten;      
-  box-shadow: $darken-shadow;*/
+.btn:hover::before, .menu__btn:hover::before {
+  opacity: 1;
+}
+.btn::before, .menu__btn::before {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  inset: 0;
+  background-image: linear-gradient(to top, #9b63df, #ff88de);
+  box-shadow: 3px 3px 10px #424242;
+  opacity: 0;
+  z-index: -1;
+  transition: 0.3s ease;
 }
 .btn span, .menu__btn span {
   color: #fff;
@@ -321,8 +337,8 @@ header .main__image {
   width: 50%;
 }
 
-.loading-spinner {
-  animation: rotate-forever 3s ease-in-out infinite;
+.spinner {
+  animation: spinner 2s ease-in-out infinite;
   width: 100px;
   height: 100px;
   border: 10px solid transparent;
@@ -430,24 +446,49 @@ header .main__image {
   font-size: 22px;
   font-weight: bolder;
 }
+.restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart {
+  border: 1px solid orange;
+  /*i{
+      align-self: flex-end;
+      font-size: $font-size-i;                        
+      transition: .3s ease-in; 
+      border: 1px solid red;
+      text-shadow: 2px 2px 0px blue;         
+
+      &:nth-child(1){
+          opacity: 0;      
+          color: $colour-primary;                  
+      }                   
+
+      &:nth-child(2){
+          position: absolute;
+          right: 0;
+
+      }  
+  }
+  &:hover i:nth-child(1){
+      opacity: 1;
+  }
+  &:hover i:nth-child(2){
+      opacity: 0;
+  }*/
+}
 .restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart i {
+  position: relative;
   align-self: flex-end;
   font-size: 30px;
-  transition: 0.3s ease-in;
-}
-.restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart i:nth-child(1) {
-  opacity: 0;
-  color: #9356DC;
-}
-.restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart i:nth-child(2) {
-  position: absolute;
-  right: 0;
-}
-.restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart:hover i:nth-child(1) {
+  transition: 3s ease-in-out;
+  color: blue;
   opacity: 1;
 }
-.restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart:hover i:nth-child(2) {
-  opacity: 0;
+.restaurants .card-restaurant .infos-restaurant .nom-restaurant .icone-heart i::before {
+  content: "\f004";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: red;
+  font-size: 30px;
 }
 .restaurants .card-restaurant .infos-restaurant .lieu-restaurant p {
   font-size: 20px;

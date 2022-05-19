@@ -1,3 +1,5 @@
+/* Colors */
+
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA ;
 $colour-tertiary: #99E2D0;
@@ -6,29 +8,34 @@ $colour-dark: rgb(24, 24, 24);
 $colour-menu: rgb(238, 238, 238);
 $blanc: #fff;
 
+/* animation card */
+
 $anim-dur: 1.5s;
 $num-card : 9;
 $anim-delay : calc($anim-dur / $num-card);
+
+/* box shadow */
 
 $colour-shadow: rgb(193, 193, 193);
 
 $box-shadow : 3px 3px 10px $colour-shadow;
 $darken-shadow : 3px 3px 10px darken($colour-shadow, 50%);
 
+/* Taille des icônes */ 
 $font-size-i : 30px;
 
+
+/* linear-gradient button */
 $colour-linear: linear-gradient(to top, $colour-primary, $colour-secondary);
 
-$lighten-color-primary: lighten($colour-primary, 5%);
-$lighten-color-secondary: lighten($colour-secondary, 5%);
+$lighten-color-primary: lighten($colour-primary, 3%);
+$lighten-color-secondary: lighten($colour-secondary, 3%);
 
 $linear-lighten: linear-gradient(to top, $lighten-color-primary, $lighten-color-secondary);
+
+/* fonts*/
 
 $police-primary: 'Roboto', sans-serif;
 $police-secondary: 'Shrikhand', cursive;
 
-/* Load spinner */
 
-$color:      #ffffff;
-$size:       30px;
-$speed:      0.75s;
