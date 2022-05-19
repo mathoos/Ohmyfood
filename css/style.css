@@ -5,6 +5,7 @@
 /* Taille des icônes */
 /* linear-gradient button */
 /* fonts*/
+/* linear-gradient spinner */
 /* Animation cards */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @keyframes apparition {
@@ -24,6 +25,17 @@
   }
   100% {
     transform: rotate(1turn);
+  }
+}
+@keyframes overflow-visible {
+  to {
+    overflow: visible;
+  }
+}
+@keyframes opacity {
+  to {
+    opacity: 0;
+    z-index: -10;
   }
 }
 @font-face {
@@ -72,6 +84,8 @@ input, button, fieldset {
 
 body {
   box-sizing: border-box;
+  overflow: hidden;
+  animation: overflow-visible 0s ease 3s forwards;
 }
 
 hr {
@@ -350,15 +364,38 @@ header .main__image {
   width: 50%;
 }
 
-.spinner {
-  animation: spinner 2s ease-in-out infinite;
+.loader {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 50;
+  animation: opacity 2s ease 3s forwards;
+}
+.loader .spinner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100px;
   height: 100px;
-  border: 10px solid transparent;
-  border-right-color: #FF79DA;
-  border-left-color: #9356DC;
-  border-top-color: #99E2D0;
   border-radius: 50%;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  animation: spinner 1.4s linear infinite forwards;
+}
+.loader .spinner::after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.loader .spinner:hover {
+  background: linear-gradient(to top, #9356DC, #99E2D0);
 }
 
 .fonctionnement {

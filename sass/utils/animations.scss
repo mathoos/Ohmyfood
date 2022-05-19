@@ -16,9 +16,22 @@
 
 @keyframes spinner{ 
     0%{
-        transform: rotate(0)
+        transform: rotate(0);
     }
     100%{
-        transform: rotate(1turn)
+        transform: rotate(1turn);   
+    }
+}
+
+@keyframes overflow-visible{
+    to{
+        overflow: visible
+    }
+}
+
+@keyframes opacity{
+    to{
+        opacity: 0;
+        z-index: -10;
     }
 }

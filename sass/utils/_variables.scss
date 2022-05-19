@@ -40,3 +40,7 @@ $police-primary: 'Roboto', sans-serif;
 $police-secondary: 'Shrikhand', cursive;
 
 
+/* linear-gradient spinner */
+
+$colour-linear: linear-gradient(to top, $colour-primary, $colour-secondary);
+$colour-spinner: linear-gradient(to top, $colour-primary, $colour-tertiary);

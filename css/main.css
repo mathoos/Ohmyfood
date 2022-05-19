@@ -5,6 +5,7 @@
 /* Taille des icônes */
 /* linear-gradient button */
 /* fonts*/
+/* linear-gradient spinner */
 /* Animation cards */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @keyframes apparition {
@@ -24,6 +25,17 @@
   }
   100% {
     transform: rotate(1turn);
+  }
+}
+@keyframes overflow-visible {
+  to {
+    overflow: visible;
+  }
+}
+@keyframes opacity {
+  to {
+    opacity: 0;
+    z-index: -10;
   }
 }
 @font-face {
@@ -72,6 +84,8 @@ input, button, fieldset {
 
 body {
   box-sizing: border-box;
+  overflow: hidden;
+  animation: overflow-visible 0s ease 3s forwards;
 }
 
 hr {
