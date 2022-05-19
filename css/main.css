@@ -302,10 +302,10 @@ header .main__image {
   gap: 5px;
   width: 100%;
   padding: 1rem;
-  transition: 0.3s;
   background-color: white;
   z-index: 5;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 .menu__container .card__visible:hover {
   width: 80%;
@@ -316,6 +316,13 @@ header .main__image {
 .menu__container .card__visible--sous-titre {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+}
+.menu__container .card__visible--sous-titre p:nth-child(1) {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .menu__container .card__invisible {
   position: absolute;

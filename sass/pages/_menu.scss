@@ -59,27 +59,36 @@
                 flex-direction: column;
                 gap: 5px;
                 width: 100%;
-                padding: 1rem;
-                transition: .3s;
+                padding: 1rem;             
                 background-color: white;
                 z-index: 5;
                 cursor: pointer;
+                transition: .3s ease;
                
                 &:hover{
                     width: 80%;
-                }
-                &:hover + .card__invisible{
-                    i{
-                        transform: translateX(0) rotate(0);
-                    }                   
-                }
 
+                    & + .card__invisible{
+                        i{
+                            transform: translateX(0) rotate(0);
+                        } 
+                    }    
+                }
+               
                 &--sous-titre{
                     display: flex;
                     justify-content: space-between;
-                }
-        
+                    width: 100%;
+                    
+                    p:nth-child(1){
+                        display: inline-block;
+                        text-overflow: ellipsis;
+                        overflow: hidden;                       
+                        white-space: nowrap;                     
+                    }
+                }       
             }
+
             &__invisible{
                 position: absolute;            
                 display: flex;
@@ -102,8 +111,6 @@
 
     &__btn{
         @extend .btn;
-        width: 50%;
-        
-        
+        width: 50%;       
     }
 }
