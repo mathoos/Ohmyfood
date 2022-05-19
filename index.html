@@ -19,10 +19,16 @@
         <div class="header__logo">
            <img src="./img/logo/ohmyfood@2x.svg">
         </div>
-        <div class="header__localisation">             
-            <i class="fa-solid fa-location-dot"></i>        
-            <p>Paris, Belleville</p>           
-        </div>
+
+        <form class="header__localisation" method="post" action=traitement.php>    
+            <fieldset>
+                <label for="ville" class="icon-lieu">
+                    <i class="fa-solid fa-location-dot"></i>
+                </label>
+                <input type="text" name="ville" id="ville" placeholder="Paris, Belleville" maxlength="25">
+            </fieldset>             
+        </form>
+
         <div class="header__presentation">
             <h1>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
