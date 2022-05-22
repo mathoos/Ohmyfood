@@ -53,7 +53,18 @@
         padding: 30px 0 30px 45px;
         background-color: $colour-menu;
         box-shadow: $box-shadow;
+        transition: .3s ease;
+        cursor: pointer;
 
+        &:hover{         
+            background-color: lighten($colour-menu, 10%);
+            & .fonctionnement__box--icone{
+                i{
+                    color: $colour-primary;
+                }
+            }              
+        }
+        
         &--numero{
             position: absolute;
             left: -15px;          
@@ -71,10 +82,10 @@
         }
 
         &--icone{
-
             i{
                 color: grey;
                 font-size: 20px;
+                transition: .3s ease;
             }          
         }
 

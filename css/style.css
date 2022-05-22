@@ -419,6 +419,14 @@ header .main__image {
   padding: 30px 0 30px 45px;
   background-color: rgb(238, 238, 238);
   box-shadow: 3px 3px 10px rgb(193, 193, 193);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.fonctionnement__box:hover {
+  background-color: white;
+}
+.fonctionnement__box:hover .fonctionnement__box--icone i {
+  color: #9356DC;
 }
 .fonctionnement__box--numero {
   position: absolute;
@@ -437,6 +445,7 @@ header .main__image {
 .fonctionnement__box--icone i {
   color: grey;
   font-size: 20px;
+  transition: 0.3s ease;
 }
 .fonctionnement__box--titre p {
   font-size: 18px;
