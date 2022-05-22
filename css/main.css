@@ -86,6 +86,7 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   animation: overflow-visible 0s ease 3s forwards;
+  position: relative;
 }
 
 hr {
@@ -333,16 +334,22 @@ header .main__image {
 .menu__container .card__visible:hover + .card__invisible i {
   transform: translateX(0) rotate(0);
 }
-.menu__container .card__visible--sous-titre {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.menu__container .card__visible--sous-titre p:nth-child(1) {
-  display: inline-block;
+.menu__container .card__visible--titre h3 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+.menu__container .card__visible--sous-titre {
+  display: flex;
+  justify-content: space-between;
+}
+.menu__container .card__visible--sous-titre p:nth-child(1) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__container .card__visible--sous-titre p:nth-child(2) {
+  font-weight: bolder;
 }
 .menu__container .card__invisible {
   position: absolute;

@@ -74,17 +74,27 @@
                         } 
                     }    
                 }
+
+                &--titre{                
+                    h3{
+                        text-overflow: ellipsis;
+                        overflow: hidden;                       
+                        white-space: nowrap; 
+                    }
+                }
                
                 &--sous-titre{
                     display: flex;
                     justify-content: space-between;
-                    width: 100%;
-                    
+                             
                     p:nth-child(1){
-                        display: inline-block;
                         text-overflow: ellipsis;
                         overflow: hidden;                       
                         white-space: nowrap;                     
+                    }
+
+                    p:nth-child(2){
+                        font-weight: bolder;                    
                     }
                 }       
             }
