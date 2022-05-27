@@ -43,59 +43,87 @@
     display: flex;
     flex-direction: column;
     padding: 80px 30px 80px 45px;
-    gap: 20px;
+    gap: 25px;
 
-    &__box{
-        position: relative;
+    @include desktop{
+        padding: 80px 30px 80px 30px;
+    }
+
+    .fonctionnement-container{
         display: flex;
-        gap: 30px;      
-        border-radius: 20px;
-        padding: 30px 0 30px 45px;
-        background-color: $colour-menu;
-        box-shadow: $box-shadow;
-        transition: .3s ease;
-        cursor: pointer;
+        flex-direction: column;
+        gap: 25px;
 
-        &:hover{         
-            background-color: lighten($colour-menu, 10%);
-            & .fonctionnement__box--icone{
-                i{
-                    color: $colour-primary;
-                }
-            }              
+        @include desktop{
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 50px;
         }
-        
-        &--numero{
-            position: absolute;
-            left: -15px;          
+
+        .card__fonctionnement{
+            position: relative;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: $colour-primary;          
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+            gap: 30px;      
+            border-radius: 20px;
+            padding: 30px 0 30px 45px;
+            background-color: $colour-menu;
+            box-shadow: $box-shadow;
+            transition: .3s ease;
+            cursor: pointer;
 
-            p{
-                color: $blanc;
-            }         
-        }
+            @include desktop{
+                flex-direction: column;
+                align-items: center;            
+                width: 100%;
+            }
+    
+            &:hover{         
+                background-color: lighten($colour-menu, 10%);
+                & .card__fonctionnement--icone{
+                    i{
+                        color: $colour-primary;
+                    }
+                }              
+            }
+            
+            &--numero{
+                position: absolute;
+                left: -15px;          
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $colour-primary;          
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
 
-        &--icone{
-            i{
-                color: grey;
-                font-size: 20px;
-                transition: .3s ease;
-            }          
-        }
-
-        &--titre{
-            p{
-                font-size: 18px;
-                font-weight: bolder;
+                @include desktop {
+                    position: static;
+                }
+    
+                p{
+                    color: $blanc;
+                }         
+            }
+    
+            &--icone{
+                i{
+                    color: grey;
+                    font-size: 20px;
+                    transition: .3s ease;
+                }          
+            }
+    
+            &--titre{
+                p{
+                    font-size: 18px;
+                    font-weight: bolder;
+                }
             }
         }
     }
+
+    
 }
 
 /* SECTION RESTAURANTS */
@@ -108,82 +136,108 @@
     width: 100%;
     background-color: $colour-menu;
     padding: 80px 30px;
-    
-    a{
-        color: $colour-dark;
-    }
 
     h2{
         font-size: 26px;
         font-weight: bolder;
     }
-    .card-restaurant{
-        border-radius: 20px;
-        height: 300px;
-        overflow: hidden;
-        .image-restaurant{
-            position: relative;
-            width: 100%;
-            height: 70%;
-            img{
-                @include img;
-            }
-            .etiquette{
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                background-color: $colour-tertiary;
-                border-radius: 3px;
-                padding: 7px 14px;
-                font-weight: bolder;
-                @if(background-color : $colour-tertiary){
-                    color: darken($colour-tertiary, 50%)
-                }
-            }
+
+    .restaurant_container{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        @include desktop{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 50px;
         }
-        .infos-restaurant{            
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+
+        .card__restaurant{
             width: 100%;
-            height: 30%;
-            padding: 0 30px;
-            background-color: $blanc;
-            .nom-restaurant{
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                h3{
-                    font-size: 22px;
-                    font-weight: bolder;
-                }
-                .icone-heart{  
-                    i{
-                        align-self: flex-end;
-                        font-size: $font-size-i;                        
-                                        
+            height: 300px;        
+            color: $colour-dark;           
+            border-radius: 20px;               
+            overflow: hidden;
+            
+
+            @include desktop{
+                width: calc((100% / 2) - (50px / 2));              
+            }
+
+            @media screen and(min-width:$large){
+                height: 400px;
+            }
+
+                &--image{
+                    position: relative;
+                    width: 100%;
+                    height: 70%;
     
-                        &:nth-child(2){
-                            position: absolute;
-                            right: 0;
-                            transform: scale(0); 
-                            color: $colour-primary;   
-                            transition: .5s ease-in-out;                           
-                        }  
+                    img{
+                        @include img;
                     }
-                    &:hover i{
-                        &:nth-child(2){
-                            transform: scale(1);                    
+                    
+                    .etiquette{
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        background-color: $colour-tertiary;
+                        border-radius: 3px;
+                        padding: 7px 14px;
+                        font-weight: bolder;
+                        @if(background-color : $colour-tertiary){
+                            color: darken($colour-tertiary, 50%)
                         }
-                    }                   
+                    }
                 }
-                
-            }
-            .lieu-restaurant{
-                p{
-                    font-size: 20px;
+                &--infos{            
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100%;
+                    height: 30%;
+                    padding: 0 30px;
+                    background-color: $blanc;
+
+                    .nom-restaurant{
+                        position: relative;
+                        display: flex;
+                        justify-content: space-between;
+                        h3{
+                            font-size: 22px;
+                            font-weight: bolder;
+                        }
+                        .icone-heart{  
+                            i{
+                                align-self: flex-end;
+                                font-size: $font-size-i;                        
+                                                
+            
+                                &:nth-child(2){
+                                    position: absolute;
+                                    right: 0;
+                                    transform: scale(0); 
+                                    color: $colour-primary;   
+                                    transition: .5s ease-in-out;                           
+                                }  
+                            }
+                            &:hover i{
+                                &:nth-child(2){
+                                    transform: scale(1);                    
+                                }
+                            }                   
+                        }
+                        
+                    }
+                    .lieu-restaurant{
+                        p{
+                            font-size: 20px;
+                        }
+                    }
                 }
-            }
+            
         }
-    }
+    }   
 }

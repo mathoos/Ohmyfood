@@ -6,25 +6,52 @@ footer{
     background-color: rgb(53, 53, 53);
     color: $blanc;
 
+    @include desktop{
+        padding-right: 50%;
+    }
+
     h1{
         font-family: $police-secondary;
         font-size: 1.5rem;
         font-weight: lighter;
     }
-    .info-footer{
+    .footer__container{
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
         gap: 10px;
 
-        i{
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            width: 20px;
-            height: 20px;
+        @include desktop{
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 100px;
         }
+
+        &--info{
+
+            &:first-of-type{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .info-footer{
+                display: flex;
+                align-items: flex-end;
+                gap: 10px;
+        
+                i{
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            a{
+                color: $blanc;
+            }
+        }
+
+        
     }
-    a{
-        color: $blanc;
-    }
+    
 }
