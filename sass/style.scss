@@ -163,11 +163,8 @@
             
 
             @include desktop{
-                width: calc((100% / 2) - (50px / 2));              
-            }
-
-            @media screen and(min-width:$large){
-                height: 400px;
+                width: calc((100% / 2) - (50px / 2));  
+                height: 400px;            
             }
 
                 &--image{

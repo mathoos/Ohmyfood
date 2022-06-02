@@ -1,17 +1,38 @@
+.positioned{
+    position: absolute;
+    width: 100%;
+    top : 50vh;
+
+    @include desktop{
+        top : 80vh;
+    }
+}
+
 .menu{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;  
+    width: 100%;
     border-radius: 50px 50px 0 0;
     padding: 30px 30px 50px 30px;
     background-color: $colour-menu;
+
+    @include desktop{
+        gap: 100px;
+        padding-top : 50px;
+    }
 
     &__titre{
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+
+        @include desktop{
+            justify-content: center;
+            gap: 100px;
+        }
 
         h1{
             font-family: $police-secondary;
@@ -25,102 +46,115 @@
     &__container{
         display: flex;
         flex-direction: column;
+        gap : 20px;
         width: 100%;
-        gap: 20px;
-        
 
-        h2{
-            width: fit-content;
-            text-transform: uppercase;
-            font-weight: lighter;
-            font-size: 1.2rem;
-            padding-bottom: .5rem;
-            background: linear-gradient(to bottom, transparent 90%, $colour-tertiary 1%);
-            background-size: 50% 100%;
-            background-repeat: no-repeat;
+        @include desktop{
+            flex-direction: row;
+            gap: 50px;
         }
-        .card{
-            position: relative;
+
+        .bloc{
             display: flex;
-            background-color: $colour-tertiary;
-            box-shadow: $box-shadow;           
-            border-radius: 15px;
-            overflow: hidden;
-            animation: apparition $anim-dur ease both;
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
 
-            @for $i from 1 through $num-card {
-                &--#{$i} {
-                    animation-delay: $anim-delay * $i;
-                }
-            }           
-
-            &__visible{
+            h2{
+                width: fit-content;
+                text-transform: uppercase;
+                font-weight: lighter;
+                font-size: 1.2rem;
+                padding-bottom: .5rem;
+                background: linear-gradient(to bottom, transparent 90%, $colour-tertiary 1%);
+                background-size: 50% 100%;
+                background-repeat: no-repeat;
+            }
+      
+            .card{
+                position: relative;
                 display: flex;
-                flex-direction: column;
-                gap: 5px;
-                width: 100%;
-                padding: 1rem;             
-                background-color: white;
-                z-index: 5;
-                cursor: pointer;
-                transition: .3s ease;
-               
-                &:hover{
-                    width: 80%;
-
-                    & + .card__invisible{
-                        i{
-                            transform: translateX(0) rotate(0);
-                        } 
-                    }    
-                }
-
-                &--titre{                
-                    h3{
-                        text-overflow: ellipsis;
-                        overflow: hidden;                       
-                        white-space: nowrap; 
+                background-color: $colour-tertiary;
+                box-shadow: $box-shadow;           
+                border-radius: 15px;
+                overflow: hidden;
+                animation: apparition $anim-dur ease both;
+    
+                @for $i from 1 through $num-card {
+                    &--#{$i} {
+                        animation-delay: $anim-delay * $i;
                     }
-                }
-               
-                &--sous-titre{
+                }           
+    
+                &__visible{
                     display: flex;
-                    justify-content: space-between;
-                             
-                    p:nth-child(1){
-                        text-overflow: ellipsis;
-                        overflow: hidden;                       
-                        white-space: nowrap;                     
+                    flex-direction: column;
+                    gap: 5px;
+                    width: 100%;
+                    padding: 1rem;             
+                    background-color: white;
+                    z-index: 5;
+                    cursor: pointer;
+                    transition: .3s ease;
+                    
+                    &:hover{
+                        width: 80%;
+    
+                        & + .card__invisible{
+                            i{
+                                transform: translateX(0) rotate(0);
+                            } 
+                        }    
                     }
-
-                    p:nth-child(2){
-                        font-weight: bolder;                    
+    
+                    &--titre{                
+                        h3{
+                            text-overflow: ellipsis;
+                            overflow: hidden;                       
+                            white-space: nowrap; 
+                        }
                     }
-                }       
-            }
-
-            &__invisible{
-                position: absolute;            
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 20%;
-                height: 100%;
-                right: 0;
-                top: 0;
-
-                i{
-                    transform: translateX(150%) rotate(360deg);
-                    font-size: 2rem;
-                    color: white;
-                    transition: .5s ease;
+                    
+                    &--sous-titre{
+                        display: flex;
+                        justify-content: space-between;
+                                    
+                        p:nth-child(1){
+                            text-overflow: ellipsis;
+                            overflow: hidden;                       
+                            white-space: nowrap;                     
+                        }
+    
+                        p:nth-child(2){
+                            font-weight: bolder;                    
+                        }
+                    }       
+                }
+    
+                &__invisible{
+                    position: absolute;            
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20%;
+                    height: 100%;
+                    right: 0;
+                    top: 0;
+    
+                    i{
+                        transform: translateX(150%) rotate(360deg);
+                        font-size: 2rem;
+                        color: white;
+                        transition: .5s ease;
+                    }
                 }
             }
-        }
+        }    
     }
 
-    &__btn{
-        @extend .btn;
-        width: 50%;       
+    .btn{
+        @include desktop{
+            margin-bottom: 100px;
+        }
     }
 }

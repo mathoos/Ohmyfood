@@ -6,10 +6,6 @@ footer{
     background-color: rgb(53, 53, 53);
     color: $blanc;
 
-    @include desktop{
-        padding-right: 50%;
-    }
-
     h1{
         font-family: $police-secondary;
         font-size: 1.5rem;
@@ -22,7 +18,6 @@ footer{
 
         @include desktop{
             flex-direction: row;
-            justify-content: space-between;
             gap: 100px;
         }
 

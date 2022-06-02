@@ -1,6 +1,10 @@
 .header {
     width: 100%; 
 
+    @include desktop{
+        height: auto;
+    }
+
     &__logo {
         display: flex;
         justify-content: center;
