@@ -1,44 +1,6 @@
 @import "./main.scss";
 
 
-.loader{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: $blanc;
-    z-index: 50;
-    animation: opacity 2s ease 3s forwards;
-
-    .spinner {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        height: 100px;  
-        border-radius: 50%;
-        background: $colour-linear;
-        animation: spinner 1.4s linear infinite forwards;
-        
-    
-        &::after{
-            content: '';
-            position: absolute;
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            background-color: $blanc; 
-        }
-    
-        &:hover{
-            background: $colour-spinner;
-        }
-    }
-}
-
 .fonctionnement{
     display: flex;
     flex-direction: column;

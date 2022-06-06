@@ -131,6 +131,40 @@ a {
   font-size: 18px;
 }
 
+.loader {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 50;
+  animation: opacity 2s ease 3s forwards;
+}
+.loader .spinner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  animation: spinner 1.4s linear infinite forwards;
+}
+.loader .spinner::after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.loader .spinner:hover {
+  background: linear-gradient(to top, #9356DC, #99E2D0);
+}
+
 .header {
   width: 100%;
 }
@@ -433,40 +467,6 @@ header .main__image {
   .menu .btn {
     margin-bottom: 100px;
   }
-}
-
-.loader {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  z-index: 50;
-  animation: opacity 2s ease 3s forwards;
-}
-.loader .spinner {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  animation: spinner 1.4s linear infinite forwards;
-}
-.loader .spinner::after {
-  content: "";
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background-color: #fff;
-}
-.loader .spinner:hover {
-  background: linear-gradient(to top, #9356DC, #99E2D0);
 }
 
 .fonctionnement {
