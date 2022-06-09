@@ -40,9 +40,7 @@
                 color: $colour-dark;
                 background-color: $colour-form;               
             }
-        }
-
-       
+        }      
     }
     &__presentation{
         display: flex;
@@ -59,11 +57,19 @@
             width: 80%;
             font-size: 30px;
             font-weight: bolder;
+            
+            @include desktop{
+                width: 20%;
+            }
         }
 
         p{
             font-size: 20px;
             font-weight: lighter;
+
+            @include desktop{
+                width: 25%;
+            }
         }
     }
 }

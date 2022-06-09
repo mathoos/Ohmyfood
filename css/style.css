@@ -136,7 +136,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: #fff;
   z-index: 50;
@@ -220,9 +220,19 @@ a {
   font-size: 30px;
   font-weight: bolder;
 }
+@media screen and (min-width: 1200px) {
+  .header__presentation h1 {
+    width: 20%;
+  }
+}
 .header__presentation p {
   font-size: 20px;
   font-weight: lighter;
+}
+@media screen and (min-width: 1200px) {
+  .header__presentation p {
+    width: 25%;
+  }
 }
 
 footer {
@@ -511,7 +521,7 @@ header .main__image {
   }
 }
 .fonctionnement .fonctionnement-container .card__fonctionnement:hover {
-  background-color: white;
+  background-color: #e4d5f6;
 }
 .fonctionnement .fonctionnement-container .card__fonctionnement:hover .card__fonctionnement--icone i {
   color: #9356DC;

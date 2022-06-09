@@ -40,7 +40,7 @@
             }
     
             &:hover{         
-                background-color: lighten($colour-menu, 10%);
+                background-color: lighten($colour-primary, 30%);
                 & .card__fonctionnement--icone{
                     i{
                         color: $colour-primary;
